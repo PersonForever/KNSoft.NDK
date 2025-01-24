@@ -186,6 +186,7 @@ RtlCreateUserProcessEx(
     _Out_ PRTL_USER_PROCESS_INFORMATION ProcessInformation);
 #endif
 
+_Analysis_noreturn_
 DECLSPEC_NORETURN
 NTSYSAPI
 VOID
@@ -334,6 +335,7 @@ RtlUserThreadStart(
     _In_ PTHREAD_START_ROUTINE Function,
     _In_ PVOID Parameter);
 
+_Analysis_noreturn_
 DECLSPEC_NORETURN
 NTSYSAPI
 VOID

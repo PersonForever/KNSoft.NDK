@@ -217,6 +217,9 @@ typedef struct _INITIAL_TEB
     PVOID StackAllocationBase;
 } INITIAL_TEB, *PINITIAL_TEB;
 
+/**
+ * The PS_PROTECTION structure is used to define the protection level of a process.
+ */
 typedef struct _PS_PROTECTION
 {
     union

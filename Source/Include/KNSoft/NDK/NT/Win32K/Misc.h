@@ -218,6 +218,20 @@ NtUserGetProcessWindowStation(
     );
 
 NTSYSCALLAPI
+HWND
+NTAPI
+NtUserGhostWindowFromHungWindow(
+    _In_ HWND WindowHandle
+    );
+
+NTSYSCALLAPI
+HWND
+NTAPI
+NtUserHungWindowFromGhostWindow(
+    _In_ HWND WindowHandle
+    );
+
+NTSYSCALLAPI
 LOGICAL
 NTAPI
 NtUserCloseWindowStation(
@@ -231,14 +245,11 @@ NtUserSetProcessWindowStation(
     _In_ HWINSTA WindowStationHandle
     );
 
-NTSYSAPI
+NTSYSCALLAPI
 LOGICAL
 NTAPI
-SetWindowStationUser(
-    _In_ HWINSTA WindowStationHandle,
-    _In_ PLUID UserLogonId,
-    _In_ PSID UserSid,
-    _In_ ULONG UserSidLength
+NtUserSetChildWindowNoActivate(
+    _In_ HWND WindowHandle
     );
 
 NTSYSCALLAPI
@@ -558,7 +569,9 @@ NtUserGetCurrentInputMessageSource(
 NTSYSCALLAPI
 HCURSOR
 NTAPI
-NtUserGetCursor();
+NtUserGetCursor(
+    VOID
+    );
 
 NTSYSCALLAPI
 BOOL
@@ -586,7 +599,9 @@ NtUserGetDisplayAutoRotationPreferences(
 NTSYSCALLAPI
 ULONG
 NTAPI
-NtUserGetDoubleClickTime();
+NtUserGetDoubleClickTime(
+    VOID
+    );
 
 NTSYSCALLAPI
 BOOL
